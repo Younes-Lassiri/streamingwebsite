@@ -40,9 +40,9 @@ const Navbar = () => {
           <Image
             src="/assets/logo.webp"
             alt="8kstreamlive logo"
-            width={160}
-            height={48}
-            className="h-14 w-auto object-contain"
+            width={480}
+            height={144}
+            className="h-20 md:h-24 w-auto object-contain"
             priority
           />
         </Link>
@@ -111,3 +111,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
