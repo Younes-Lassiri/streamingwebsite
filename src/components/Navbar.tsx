@@ -42,7 +42,7 @@ const Navbar = () => {
             alt="8kstreamlive logo"
             width={160}
             height={48}
-            className="h-10 w-auto object-contain"
+            className="h-14 w-auto object-contain"
             priority
           />
         </Link>
