@@ -36,3 +36,4 @@ async function convertFolder(dir) {
 convertFolder(inputDir).then(() => {
   console.log("Done.");
 });
+

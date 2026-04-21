@@ -35,14 +35,14 @@ const Navbar = () => {
       }`}
       style={{ top: "var(--banner-height, 0px)" }}
     >
-      <div className="container flex items-center justify-between h-16 md:h-20">
+      <div className="container flex items-center justify-between h-24 md:h-28">
         <Link href="/" className="flex items-center gap-2.5 group">
           <Image
             src="/assets/logo.webp"
             alt="8kstreamlive logo"
-            width={480}
-            height={144}
-            className="h-20 md:h-24 w-auto object-contain"
+            width={640}
+            height={192}
+            className="h-28 md:h-32 w-auto object-contain"
             priority
           />
         </Link>
@@ -111,4 +111,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
 
