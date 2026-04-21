@@ -18,6 +18,10 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Premium IPTV Service | 25,000+ Channels in 4K",
   description: "Get instant access to 25,000+ live channels, 120,000+ movies and series, and all major sports in stunning 4K quality. Starting at $5.38/month.",
+  icons: {
+    icon: "/assets/icon.webp",
+    apple: "/assets/icon.webp",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

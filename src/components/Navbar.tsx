@@ -1,9 +1,10 @@
 ﻿"use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronRight } from "lucide-react";
-import { NAV_LINKS, SITE_NAME } from "@/data/siteData";
+import { NAV_LINKS } from "@/data/siteData";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const Navbar = () => {
@@ -36,7 +37,14 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="font-heading font-bold text-xl text-foreground">{SITE_NAME}</span>
+          <Image
+            src="/assets/logo.webp"
+            alt="8kstreamlive logo"
+            width={160}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
         <div className="hidden lg:flex items-center gap-1">

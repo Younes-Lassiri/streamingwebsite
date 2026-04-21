@@ -3,31 +3,31 @@ import { m } from "framer-motion";
 import { Globe, Zap, Shield, Activity } from "lucide-react";
 
 const SERVERS = [
-  { country: "United States", flag: "ðŸ‡ºðŸ‡¸", city: "New York, LA, Dallas", ping: "12ms", load: 42, status: "Optimal" },
-  { country: "Canada", flag: "ðŸ‡¨ðŸ‡¦", city: "Toronto, Vancouver", ping: "18ms", load: 38, status: "Optimal" },
-  { country: "United Kingdom", flag: "ðŸ‡¬ðŸ‡§", city: "London, Manchester", ping: "20ms", load: 55, status: "Optimal" },
-  { country: "France", flag: "ðŸ‡«ðŸ‡·", city: "Paris, Marseille", ping: "22ms", load: 47, status: "Optimal" },
-  { country: "Germany", flag: "ðŸ‡©ðŸ‡ª", city: "Frankfurt, Berlin", ping: "24ms", load: 51, status: "Optimal" },
-  { country: "Sweden", flag: "ðŸ‡¸ðŸ‡ª", city: "Stockholm", ping: "25ms", load: 33, status: "Optimal" },
-  { country: "Spain", flag: "ðŸ‡ªðŸ‡¸", city: "Madrid, Barcelona", ping: "28ms", load: 44, status: "Optimal" },
-  { country: "Italy", flag: "ðŸ‡®ðŸ‡¹", city: "Rome, Milan", ping: "30ms", load: 39, status: "Optimal" },
-  { country: "Brazil", flag: "ðŸ‡§ðŸ‡·", city: "SÃ£o Paulo, Rio", ping: "35ms", load: 61, status: "Optimal" },
-  { country: "Mexico", flag: "ðŸ‡²ðŸ‡½", city: "Mexico City", ping: "33ms", load: 48, status: "Optimal" },
-  { country: "South Africa", flag: "ðŸ‡¿ðŸ‡¦", city: "Johannesburg", ping: "40ms", load: 35, status: "Optimal" },
-  { country: "UAE", flag: "ðŸ‡¦ðŸ‡ª", city: "Dubai", ping: "38ms", load: 50, status: "Optimal" },
-  { country: "India", flag: "ðŸ‡®ðŸ‡³", city: "Mumbai, Delhi", ping: "42ms", load: 58, status: "Optimal" },
-  { country: "China", flag: "ðŸ‡¨ðŸ‡³", city: "Shanghai, Beijing", ping: "45ms", load: 64, status: "Optimal" },
-  { country: "Japan", flag: "ðŸ‡¯ðŸ‡µ", city: "Tokyo, Osaka", ping: "40ms", load: 46, status: "Optimal" },
-  { country: "South Korea", flag: "ðŸ‡°ðŸ‡·", city: "Seoul", ping: "41ms", load: 43, status: "Optimal" },
-  { country: "Singapore", flag: "ðŸ‡¸ðŸ‡¬", city: "Singapore", ping: "39ms", load: 49, status: "Optimal" },
-  { country: "Indonesia", flag: "ðŸ‡®ðŸ‡©", city: "Jakarta", ping: "42ms", load: 52, status: "Optimal" },
-  { country: "Australia", flag: "ðŸ‡¦ðŸ‡º", city: "Sydney, Melbourne", ping: "38ms", load: 41, status: "Optimal" },
-  { country: "New Zealand", flag: "ðŸ‡³ðŸ‡¿", city: "Auckland", ping: "44ms", load: 36, status: "Optimal" },
-  { country: "Netherlands", flag: "ðŸ‡³ðŸ‡±", city: "Amsterdam", ping: "23ms", load: 45, status: "Optimal" },
-  { country: "Poland", flag: "ðŸ‡µðŸ‡±", city: "Warsaw", ping: "27ms", load: 40, status: "Optimal" },
-  { country: "Turkey", flag: "ðŸ‡¹ðŸ‡·", city: "Istanbul", ping: "32ms", load: 53, status: "Optimal" },
-  { country: "Argentina", flag: "ðŸ‡¦ðŸ‡·", city: "Buenos Aires", ping: "37ms", load: 47, status: "Optimal" },
-  { country: "Egypt", flag: "ðŸ‡ªðŸ‡¬", city: "Cairo", ping: "36ms", load: 42, status: "Optimal" },
+  { country: "United States", flag: "🇺🇸", city: "New York, LA, Dallas", ping: "12ms", load: 42 },
+  { country: "Canada", flag: "🇨🇦", city: "Toronto, Vancouver", ping: "18ms", load: 38 },
+  { country: "United Kingdom", flag: "🇬🇧", city: "London, Manchester", ping: "20ms", load: 55 },
+  { country: "France", flag: "🇫🇷", city: "Paris, Marseille", ping: "22ms", load: 47 },
+  { country: "Germany", flag: "🇩🇪", city: "Frankfurt, Berlin", ping: "24ms", load: 51 },
+  { country: "Sweden", flag: "🇸🇪", city: "Stockholm", ping: "25ms", load: 33 },
+  { country: "Spain", flag: "🇪🇸", city: "Madrid, Barcelona", ping: "28ms", load: 44 },
+  { country: "Italy", flag: "🇮🇹", city: "Rome, Milan", ping: "30ms", load: 39 },
+  { country: "Brazil", flag: "🇧🇷", city: "Sao Paulo, Rio", ping: "35ms", load: 61 },
+  { country: "Mexico", flag: "🇲🇽", city: "Mexico City", ping: "33ms", load: 48 },
+  { country: "South Africa", flag: "🇿🇦", city: "Johannesburg", ping: "40ms", load: 35 },
+  { country: "UAE", flag: "🇦🇪", city: "Dubai", ping: "38ms", load: 50 },
+  { country: "India", flag: "🇮🇳", city: "Mumbai, Delhi", ping: "42ms", load: 58 },
+  { country: "China", flag: "🇨🇳", city: "Shanghai, Beijing", ping: "45ms", load: 64 },
+  { country: "Japan", flag: "🇯🇵", city: "Tokyo, Osaka", ping: "40ms", load: 46 },
+  { country: "South Korea", flag: "🇰🇷", city: "Seoul", ping: "41ms", load: 43 },
+  { country: "Singapore", flag: "🇸🇬", city: "Singapore", ping: "39ms", load: 49 },
+  { country: "Indonesia", flag: "🇮🇩", city: "Jakarta", ping: "42ms", load: 52 },
+  { country: "Australia", flag: "🇦🇺", city: "Sydney, Melbourne", ping: "38ms", load: 41 },
+  { country: "New Zealand", flag: "🇳🇿", city: "Auckland", ping: "44ms", load: 36 },
+  { country: "Netherlands", flag: "🇳🇱", city: "Amsterdam", ping: "23ms", load: 45 },
+  { country: "Poland", flag: "🇵🇱", city: "Warsaw", ping: "27ms", load: 40 },
+  { country: "Turkey", flag: "🇹🇷", city: "Istanbul", ping: "32ms", load: 53 },
+  { country: "Argentina", flag: "🇦🇷", city: "Buenos Aires", ping: "37ms", load: 47 },
+  { country: "Egypt", flag: "🇪🇬", city: "Cairo", ping: "36ms", load: 42 },
 ];
 
 const STATS = [
@@ -40,7 +40,6 @@ const STATS = [
 const ServersWorldwide = () => (
   <section className="py-24 relative overflow-hidden" id="servers" aria-labelledby="servers-heading">
     <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-background to-secondary/20" />
-    {/* Animated background dots */}
     <div className="absolute inset-0 opacity-30">
       <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-pulse" />
       <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
@@ -54,16 +53,15 @@ const ServersWorldwide = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
       >
-        <span className="section-badge mb-4 inline-flex">ðŸŒ Global Network Infrastructure</span>
+        <span className="section-badge mb-4 inline-flex">🌍 Global Network Infrastructure</span>
         <h2 id="servers-heading" className="font-heading text-3xl md:text-5xl font-bold mt-2">
           <span className="gradient-text">25 Servers</span> Across the World
         </h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-          Ultra-low latency IPTV servers strategically placed across 25 countries â€” delivering buffer-free 4K streaming wherever you are.
+          Ultra-low latency IPTV servers strategically placed across 25 countries delivering buffer-free 4K streaming wherever you are.
         </p>
       </m.div>
 
-      {/* Live stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
         {STATS.map((s, i) => (
           <m.div
@@ -81,7 +79,6 @@ const ServersWorldwide = () => (
         ))}
       </div>
 
-      {/* Live status header */}
       <m.div
         className="max-w-6xl mx-auto mb-6 flex items-center justify-between glass-card px-5 py-3"
         initial={{ opacity: 0 }}
@@ -95,10 +92,9 @@ const ServersWorldwide = () => (
           </span>
           <span className="text-sm font-semibold text-foreground">Live Server Status</span>
         </div>
-        <span className="text-xs text-muted-foreground">All systems operational â€¢ Updated in real-time</span>
+        <span className="text-xs text-muted-foreground">All systems operational - Updated in real-time</span>
       </m.div>
 
-      {/* Server grid â€” interactive cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 max-w-6xl mx-auto">
         {SERVERS.map((s, i) => (
           <m.div
@@ -123,7 +119,6 @@ const ServersWorldwide = () => (
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-success" />
               </span>
             </div>
-
             <div className="flex items-center justify-between text-xs">
               <div className="flex items-center gap-1.5">
                 <Zap size={11} className="text-primary" />
@@ -131,8 +126,6 @@ const ServersWorldwide = () => (
               </div>
               <span className="text-muted-foreground">Load {s.load}%</span>
             </div>
-
-            {/* Load bar */}
             <div className="mt-2 h-1 rounded-full bg-secondary/50 overflow-hidden">
               <m.div
                 initial={{ width: 0 }}
@@ -162,7 +155,3 @@ const ServersWorldwide = () => (
 );
 
 export default ServersWorldwide;
-
-
-
-
