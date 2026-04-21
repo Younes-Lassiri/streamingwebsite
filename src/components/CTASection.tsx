@@ -1,17 +1,17 @@
 ﻿"use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, Play, Shield, Zap } from "lucide-react";
+import { m } from "framer-motion";
+import { ArrowRight, Ban, Play } from "lucide-react";
 
 const CTASection = () => (
   <section className="py-24 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(217_91%_60%_/_0.08),transparent_60%)]" />
     <div className="container relative z-10">
-      <motion.div
+      <m.div
         className="max-w-3xl mx-auto text-center glass-card-elevated p-12 md:p-20"
         initial={{ opacity: 0, scale: 0.96 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.5 }}
       >
         <span className="section-badge mb-6 inline-flex">ðŸš€ Start Streaming Today</span>
@@ -30,12 +30,16 @@ const CTASection = () => (
           </Link>
         </div>
         <p className="text-sm text-muted-foreground">
-          No credit card required â€¢ Instant activation â€¢ Cancel anytime
+          No credit card required â€¢ Instant activation <Ban className="w-4 h-4 text-primary" /> Cancel anytime
         </p>
-      </motion.div>
+      </m.div>
     </div>
   </section>
 );
 
 export default CTASection;
+
+
+
+
 

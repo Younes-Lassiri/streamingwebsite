@@ -1,4 +1,4 @@
-import * as React from "react";
+﻿import * as React from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -92,9 +92,9 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
       if (!api) {
         return;
       }
+      api.on("reInit", onSelect);
 
       onSelect(api);
-      api.on("reInit", onSelect);
       api.on("select", onSelect);
 
       return () => {
@@ -222,3 +222,5 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 CarouselNext.displayName = "CarouselNext";
 
 export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };
+
+

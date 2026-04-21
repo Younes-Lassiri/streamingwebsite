@@ -43,7 +43,6 @@ const Refund = () => (
             <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">4. How to Request a Refund</h2>
             <p>To request a refund, please follow these steps:</p>
             <ol className="list-decimal pl-6 space-y-2 mt-3">
-              <li>Contact our support team at <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">{SUPPORT_EMAIL}</a> or via WhatsApp.</li>
               <li>Include your order number, email address used for registration, and a description of the issue.</li>
               <li>Allow our team to attempt troubleshooting before processing the refund.</li>
               <li>If the issue cannot be resolved, your refund will be initiated.</li>
@@ -63,11 +62,6 @@ const Refund = () => (
           <section>
             <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">7. Chargebacks</h2>
             <p>We encourage you to contact our support team before initiating a chargeback with your payment provider. Chargebacks without prior communication may result in account suspension. We are committed to resolving disputes directly.</p>
-          </section>
-
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">8. Contact Us</h2>
-            <p>For any refund-related inquiries, please reach out to our support team at <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">{SUPPORT_EMAIL}</a>. We aim to respond within 24 hours.</p>
           </section>
         </div>
       </div>

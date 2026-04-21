@@ -1,9 +1,10 @@
 ﻿"use client";
-import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from "framer-motion";
 import { Play, Zap, Monitor, Headphones, Shield, ArrowRight } from "lucide-react";
 import { HERO_STATS } from "@/data/siteData";
 import { useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 const FLOATING_CHANNELS = [
   { label: "ESPN", x: "8%", y: "18%", delay: 0 },
@@ -21,25 +22,24 @@ const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative min-h-[100vh] flex items-center overflow-hidden">
-      {/* Parallax background */}
-      <motion.div className="absolute inset-0" style={{ y: bgY }}>
-        <img
-          src="/assets/hero-bg.jpg"
+      <m.div className="absolute inset-0" style={{ y: bgY }}>
+        <Image
+          src="/assets/hero-bg.webp"
           alt="Family watching premium sports and entertainment streaming in 4K"
-          className="w-full h-[120%] object-cover"
-          width={1920}
-          height={1080}
+          fill
+          priority
+          quality={85}
+          className="object-cover"
+          sizes="100vw"
         />
-      </motion.div>
+      </m.div>
 
-      {/* Overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/50 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-background/50" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[120px] rounded-full" />
 
-      {/* Floating channel badges */}
       {FLOATING_CHANNELS.map((ch) => (
-        <motion.div
+        <m.div
           key={ch.label}
           className="absolute hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/60 backdrop-blur-md border border-border/40 text-xs font-bold text-foreground shadow-lg"
           style={{ left: ch.x, top: ch.y }}
@@ -49,24 +49,19 @@ const HeroSection = () => {
         >
           <span className="w-2 h-2 rounded-full bg-destructive animate-pulse" />
           {ch.label}
-          <motion.span
-            className="absolute inset-0 rounded-full"
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 4 + ch.delay, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </motion.div>
+        </m.div>
       ))}
 
       <div className="container relative z-10 py-20 md:py-28">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <m.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <span className="section-badge mb-6 inline-flex">
               <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
               5,000+ active viewers streaming right now
             </span>
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,19 +71,19 @@ const HeroSection = () => {
             <br className="hidden sm:block" />
             Stream Every{" "}
             <span className="gradient-text">Movie.</span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            25,000+ live channels, 120,000+ movies & series, and all major sports â€”
+            25,000+ live channels, 120,000+ movies & series, and all major sports —
             in stunning 4K quality. Starting at just <span className="text-foreground font-semibold">$5.38/month</span>.
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             className="flex flex-col sm:flex-row gap-4 justify-center mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,18 +95,18 @@ const HeroSection = () => {
             <Link href="/pricing" className="btn-secondary flex items-center justify-center gap-2">
               <Play size={18} /> Start Free Trial
             </Link>
-          </motion.div>
+          </m.div>
 
-          <motion.p
+          <m.p
             className="text-sm text-muted-foreground mb-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            No credit card required for trial â€¢ Instant activation â€¢ Cancel anytime
-          </motion.p>
+            No credit card required for trial • Instant activation • Cancel anytime
+          </m.p>
 
-          <motion.div
+          <m.div
             className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground mb-14"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -121,9 +116,9 @@ const HeroSection = () => {
             <span className="flex items-center gap-2"><Monitor size={15} className="text-primary" /> Works on All Devices</span>
             <span className="flex items-center gap-2"><Shield size={15} className="text-primary" /> Secure & Reliable</span>
             <span className="flex items-center gap-2"><Headphones size={15} className="text-primary" /> 24/7 US Support</span>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -135,7 +130,7 @@ const HeroSection = () => {
                 <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

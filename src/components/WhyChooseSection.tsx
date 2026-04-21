@@ -1,6 +1,6 @@
 ﻿"use client";
-import { motion } from "framer-motion";
-import { Zap, Sparkles, Layers, Trophy, Monitor, CreditCard } from "lucide-react";
+import { m } from "framer-motion";
+import { Zap, Sparkles, Layers, Trophy, Monitor, CreditCard, Gem } from "lucide-react";
 import { WHY_CHOOSE, SITE_NAME } from "@/data/siteData";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -16,28 +16,31 @@ const WhyChooseSection = () => (
   <section className="py-24 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 to-background" />
     <div className="container relative z-10">
-      <motion.div
+      <m.div
         className="text-center mb-14"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
       >
-        <span className="section-badge mb-4 inline-flex">ðŸ’Ž Why Us</span>
+        <span className="section-badge mb-4 inline-flex items-center gap-2">
+          <Gem size={16} className="text-primary" />
+          Why Us
+        </span>
         <h2 className="font-heading text-3xl md:text-5xl font-bold">
           Why Choose <span className="gradient-text">{SITE_NAME}</span>?!
         </h2>
         <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">
           We deliver a premium streaming experience with the content you love, the quality you deserve, and the support you can count on.
         </p>
-      </motion.div>
+      </m.div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
         {WHY_CHOOSE.map((item, i) => (
-          <motion.div
+          <m.div
             key={item.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ delay: i * 0.08 }}
             className="glass-card p-7 text-center hover-lift"
           >
@@ -46,7 +49,7 @@ const WhyChooseSection = () => (
             </div>
             <h3 className="font-heading font-bold text-lg mb-2">{item.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </div>
@@ -54,4 +57,7 @@ const WhyChooseSection = () => (
 );
 
 export default WhyChooseSection;
+
+
+
 

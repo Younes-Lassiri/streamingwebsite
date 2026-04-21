@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Tv, AlertTriangle } from "lucide-react";
 import { INSTALLATION_DEVICES, TROUBLESHOOTING, DEVICES } from "@/data/siteData";
 
@@ -14,7 +14,7 @@ const Installation = () => {
 
       <section className="pt-32 pb-16">
         <div className="container">
-          <motion.div
+          <m.div
             className="text-center max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ const Installation = () => {
             <p className="text-muted-foreground mt-4 text-lg">
               Get started in minutes. Follow our simple step-by-step instructions for your device.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -46,7 +46,7 @@ const Installation = () => {
           <h2 className="font-heading text-2xl font-bold text-center mb-10">Setup Instructions</h2>
           <div className="space-y-5">
             {INSTALLATION_DEVICES.map((device, i) => (
-              <motion.div
+              <m.div
                 key={device.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ const Installation = () => {
                     </li>
                   ))}
                 </ol>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -100,4 +100,6 @@ const Installation = () => {
 };
 
 export default Installation;
+
+
 

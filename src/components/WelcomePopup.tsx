@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { X, Zap, Shield, Tv, ArrowRight, Star } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const WelcomePopup = () => {
   const [open, setOpen] = useState(false);
@@ -25,7 +25,7 @@ const WelcomePopup = () => {
       {open && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -34,7 +34,7 @@ const WelcomePopup = () => {
           />
 
           {/* Modal */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.85, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -99,7 +99,7 @@ const WelcomePopup = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>
@@ -107,4 +107,6 @@ const WelcomePopup = () => {
 };
 
 export default WelcomePopup;
+
+
 

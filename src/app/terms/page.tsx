@@ -14,7 +14,7 @@ const Terms = () => (
         <div className="prose prose-invert prose-sm max-w-none space-y-6 text-muted-foreground leading-relaxed">
           <section>
             <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">1. Agreement to Terms</h2>
-            <p>By accessing or using the {SITE_NAME} website and streaming services ("Service"), you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, you must discontinue use of the Service immediately.</p>
+            <p>By accessing or using the {SITE_NAME} website and streaming services (&ldquo;Service&rdquo;), you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, you must discontinue use of the Service immediately.</p>
           </section>
 
           <section>
@@ -79,11 +79,6 @@ const Terms = () => (
             <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">11. Changes to Terms</h2>
             <p>We may update these Terms from time to time. Continued use of the Service after changes constitutes acceptance of the modified Terms. We encourage you to review this page periodically.</p>
           </section>
-
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">12. Contact Information</h2>
-            <p>If you have questions about these Terms, please contact us at <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">{SUPPORT_EMAIL}</a>.</p>
-          </section>
         </div>
       </div>
     </article>
@@ -92,4 +87,5 @@ const Terms = () => (
 );
 
 export default Terms;
+
 

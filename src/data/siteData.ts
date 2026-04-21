@@ -1,18 +1,17 @@
-// ====================================================
-// CENTRALIZED SITE DATA — Edit all content here
+﻿// ====================================================
+// CENTRALIZED SITE DATA â€” Edit all content here
 // ====================================================
 
-export const SITE_NAME = "IPTVNFL";
-export const SITE_TAGLINE = "Premium IPTV Streaming — 25,000+ Channels, 120,000+ Movies";
-export const SUPPORT_EMAIL = "support@iptvnfl.com"; // REPLACE with real email
-export const WHATSAPP_LINK = "https://wa.me/1234567890"; // REPLACE with real WhatsApp
+export const SITE_NAME = "8kstreamlive";
+export const SITE_TAGLINE = "Premium IPTV Streaming â€” 25,000+ Channels, 120,000+ Movies";
+export const SUPPORT_EMAIL = "support@8kstreamlive.com"; // REPLACE with real email
+export const WHATSAPP_LINK = "https://wa.link/eps03z"; // REPLACE with real WhatsApp
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Pricing", href: "/pricing" },
   { label: "Channel List", href: "/channel-list" },
   { label: "Installation Guide", href: "/installation" },
-  { label: "Contact Us", href: "/contact" },
 ];
 
 export const HERO_STATS = [
@@ -26,9 +25,9 @@ export const PRICING_PLANS = [
   {
     id: "1month",
     duration: "1 Month",
-    price: 19,
+    price: 14.99,
     currency: "$",
-    perMonth: 19,
+    perMonth: 14.99,
     features: [
       "4K Ultra HD Streaming",
       "25,000+ Live Channels",
@@ -44,9 +43,9 @@ export const PRICING_PLANS = [
   {
     id: "3months",
     duration: "3 Months",
-    price: 29,
+    price: 29.99,
     currency: "$",
-    perMonth: 9.67,
+    perMonth: 10,
     features: [
       "4K Ultra HD Streaming",
       "25,000+ Live Channels",
@@ -62,9 +61,9 @@ export const PRICING_PLANS = [
   {
     id: "6months",
     duration: "6 Months",
-    price: 49,
+    price: 49.99,
     currency: "$",
-    perMonth: 8.17,
+    perMonth: 8.33,
     features: [
       "4K Ultra HD Streaming",
       "25,000+ Live Channels",
@@ -80,9 +79,9 @@ export const PRICING_PLANS = [
   {
     id: "12months",
     duration: "12 Months",
-    price: 79,
+    price: 69.99,
     currency: "$",
-    perMonth: 6.58,
+    perMonth: 5.83,
     features: [
       "4K Ultra HD Streaming",
       "25,000+ Live Channels",
@@ -98,9 +97,9 @@ export const PRICING_PLANS = [
   {
     id: "24months",
     duration: "24 Months",
-    price: 129,
+    price: 119.99,
     currency: "$",
-    perMonth: 5.38,
+    perMonth: 5,
     features: [
       "4K Ultra HD Streaming",
       "25,000+ Live Channels",
@@ -168,7 +167,7 @@ export const FEATURES = [
   },
   {
     title: "Unlimited Movies & Series",
-    description: "Access over 120,000 movies and TV series instantly. From latest releases to classic films and popular series — all available on-demand.",
+    description: "Access over 120,000 movies and TV series instantly. From latest releases to classic films and popular series â€” all available on-demand.",
     icon: "Film",
   },
   {
@@ -183,7 +182,7 @@ export const FEATURES = [
   },
   {
     title: "Easy IPTV Setup",
-    description: "Simple IPTV setup on all devices — Fire Stick, Android boxes, Smart TVs, tablets, and phones. Step-by-step guides and instant activation.",
+    description: "Simple IPTV setup on all devices â€” Fire Stick, Android boxes, Smart TVs, tablets, and phones. Step-by-step guides and instant activation.",
     icon: "Settings",
   },
   {
@@ -196,31 +195,31 @@ export const FEATURES = [
 export const FAQS = [
   {
     q: "What is IPTV and how does it work?",
-    a: "IPTV (Internet Protocol Television) delivers television content over the internet instead of traditional cable or satellite. With IPTVNFL, you stream live TV, movies, and sports directly through your internet connection on any compatible device — Smart TV, Fire Stick, Android, iPhone, and more.",
+    a: "IPTV (Internet Protocol Television) delivers television content over the internet instead of traditional cable or satellite. With 8kstreamlive, you stream live TV, movies, and sports directly through your internet connection on any compatible device â€” Smart TV, Fire Stick, Android, iPhone, and more.",
   },
   {
-    q: "How do I get started with IPTVNFL?",
+    q: "How do I get started with 8kstreamlive?",
     a: "Getting started is simple: choose a subscription plan, complete the secure checkout, and receive your login credentials via email within minutes. Install a compatible IPTV app on your device, enter your credentials, and start streaming instantly.",
   },
   {
-    q: "What devices are compatible with IPTVNFL?",
-    a: "IPTVNFL works on virtually all devices: Amazon Fire TV & Fire Stick, Android phones & tablets, Samsung & LG Smart TVs, Apple TV, iPhone & iPad, Roku, Chromecast, MAG boxes, Windows & Mac computers, and any device that supports IPTV applications.",
+    q: "What devices are compatible with 8kstreamlive?",
+    a: "8kstreamlive works on virtually all devices: Amazon Fire TV & Fire Stick, Android phones & tablets, Samsung & LG Smart TVs, Apple TV, iPhone & iPad, Roku, Chromecast, MAG boxes, Windows & Mac computers, and any device that supports IPTV applications.",
   },
   {
-    q: "How many channels does IPTVNFL offer?",
-    a: "IPTVNFL provides access to over 25,000 live TV channels from 80+ countries, plus 120,000+ on-demand movies and TV series. Our library includes sports, entertainment, news, kids content, and international programming in multiple languages.",
+    q: "How many channels does 8kstreamlive offer?",
+    a: "8kstreamlive provides access to over 25,000 live TV channels from 80+ countries, plus 120,000+ on-demand movies and TV series. Our library includes sports, entertainment, news, kids content, and international programming in multiple languages.",
   },
   {
     q: "Can I watch NFL, NBA, MLB, and NHL games live?",
-    a: "Yes! IPTVNFL includes comprehensive live sports coverage. Watch NFL games, NBA basketball, MLB baseball, NHL hockey, Premier League soccer, UFC fights, WWE events, and more — all in HD and 4K quality with zero blackouts.",
+    a: "Yes! 8kstreamlive includes comprehensive live sports coverage. Watch NFL games, NBA basketball, MLB baseball, NHL hockey, Premier League soccer, UFC fights, WWE events, and more â€” all in HD and 4K quality with zero blackouts.",
   },
   {
     q: "What internet speed do I need for IPTV streaming?",
     a: "For standard HD streaming, we recommend at least 10 Mbps. For full 4K Ultra HD quality, 25 Mbps or higher is ideal. A stable wired ethernet connection provides the best experience, though strong Wi-Fi works great too.",
   },
   {
-    q: "Is IPTVNFL service reliable? What about buffering?",
-    a: "IPTVNFL maintains 99.9% uptime with 25 servers worldwide for ultra-low latency streaming. Our infrastructure is optimized for zero-buffering performance. Most users experience smooth, uninterrupted streaming on all devices.",
+    q: "Is 8kstreamlive service reliable? What about buffering?",
+    a: "8kstreamlive maintains 99.9% uptime with 25 servers worldwide for ultra-low latency streaming. Our infrastructure is optimized for zero-buffering performance. Most users experience smooth, uninterrupted streaming on all devices.",
   },
   {
     q: "How fast is activation after purchase?",
@@ -232,15 +231,15 @@ export const FAQS = [
   },
   {
     q: "Can I watch on multiple devices at the same time?",
-    a: "Yes! All IPTVNFL plans include multi-device support. You can watch on multiple screens simultaneously, making it perfect for families. Each plan specifies the number of concurrent connections allowed.",
+    a: "Yes! All 8kstreamlive plans include multi-device support. You can watch on multiple screens simultaneously, making it perfect for families. Each plan specifies the number of concurrent connections allowed.",
   },
   {
     q: "Is there an Electronic Program Guide (EPG)?",
-    a: "Yes, IPTVNFL includes a full Electronic Program Guide (EPG) with program schedules, descriptions, and catch-up TV functionality. You can see what's currently airing, what's coming up, and even watch shows you missed.",
+    a: "Yes, 8kstreamlive includes a full Electronic Program Guide (EPG) with program schedules, descriptions, and catch-up TV functionality. You can see what's currently airing, what's coming up, and even watch shows you missed.",
   },
   {
-    q: "How does IPTVNFL compare to cable TV?",
-    a: "IPTVNFL offers significantly more content at a fraction of the cost. While cable TV averages $100+/month with limited channels, IPTVNFL starts at just $5.38/month and includes 25,000+ channels, 120,000+ movies, and works on any device — no contracts, no hidden fees.",
+    q: "How does 8kstreamlive compare to cable TV?",
+    a: "8kstreamlive offers significantly more content at a fraction of the cost. While cable TV averages $100+/month with limited channels, 8kstreamlive starts at just $5.38/month and includes 25,000+ channels, 120,000+ movies, and works on any device â€” no contracts, no hidden fees.",
   },
   {
     q: "What is your refund policy?",
@@ -248,7 +247,7 @@ export const FAQS = [
   },
   {
     q: "Do you offer a free trial?",
-    a: "Yes! We offer a free trial so you can experience IPTVNFL before committing to a paid plan. Try our full channel lineup, sports coverage, and movie library risk-free to see why thousands of viewers have made the switch.",
+    a: "Yes! We offer a free trial so you can experience 8kstreamlive before committing to a paid plan. Try our full channel lineup, sports coverage, and movie library risk-free to see why thousands of viewers have made the switch.",
   },
   {
     q: "How do I set up IPTV on my Amazon Fire Stick?",
@@ -264,15 +263,15 @@ export const FAQS = [
   },
   {
     q: "Do you provide customer support?",
-    a: "Yes! IPTVNFL offers 24/7 customer support via email and WhatsApp. Our dedicated support team helps with setup, troubleshooting, billing questions, and any other issues. Most inquiries are resolved within minutes.",
+    a: "Yes! 8kstreamlive offers 24/7 customer support via email and WhatsApp. Our dedicated support team helps with setup, troubleshooting, billing questions, and any other issues. Most inquiries are resolved within minutes.",
   },
   {
     q: "What countries are covered in your channel list?",
-    a: "IPTVNFL covers 80+ countries including the USA, UK, Canada, Germany, France, Spain, Italy, Brazil, Middle East, India, and many more. Visit our Channel List page for a complete breakdown of available channels by country.",
+    a: "8kstreamlive covers 80+ countries including the USA, UK, Canada, Germany, France, Spain, Italy, Brazil, Middle East, India, and many more. Visit our Channel List page for a complete breakdown of available channels by country.",
   },
   {
-    q: "Does IPTVNFL include PPV (Pay-Per-View) events?",
-    a: "Yes! All IPTVNFL plans include access to premium PPV events including UFC fights, boxing matches, WWE events, and special sporting events — at no additional cost. Watch every major PPV event live in HD or 4K.",
+    q: "Does 8kstreamlive include PPV (Pay-Per-View) events?",
+    a: "Yes! All 8kstreamlive plans include access to premium PPV events including UFC fights, boxing matches, WWE events, and special sporting events â€” at no additional cost. Watch every major PPV event live in HD or 4K.",
   },
 ];
 
@@ -285,7 +284,7 @@ export const WHY_CHOOSE = [
   { title: "Flexible Plans", description: "Choose the plan that fits your budget and needs.", icon: "CreditCard" },
 ];
 
-// PLACEHOLDER — Replace with real approved testimonials
+// PLACEHOLDER â€” Replace with real approved testimonials
 export const TESTIMONIALS = [
   {
     name: "Mike R.",
@@ -325,7 +324,7 @@ export const TESTIMONIALS = [
   },
 ];
 
-// PLACEHOLDER — Replace with actual channel/network names pending legal approval
+// PLACEHOLDER â€” Replace with actual channel/network names pending legal approval
 export const SPORTS_NETWORKS = [
   "ABC", "CBS", "NBC", "FOX", "ESPN+", "DAZN", "PBS", "and more"
 ];
@@ -401,3 +400,4 @@ export const TROUBLESHOOTING = [
     solution: "Check your device audio settings. Try switching to a different channel. Restart the app. Ensure your device supports the stream format.",
   },
 ];
+

@@ -5,7 +5,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Zap, ShieldCheck, Clock, Headphones } from "lucide-react";
 
 const Pricing = () => {
@@ -15,7 +15,7 @@ const Pricing = () => {
 
       <section className="pt-32 pb-24">
         <div className="container">
-          <motion.div
+          <m.div
             className="text-center mb-14"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ const Pricing = () => {
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">
               Choose the plan that works for you. All plans include full access to every feature. No hidden fees.
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="flex flex-wrap justify-center gap-5 mb-12">
             {[
@@ -55,4 +55,6 @@ const Pricing = () => {
 };
 
 export default Pricing;
+
+
 

@@ -2,28 +2,37 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
+function getInitialTheme(): boolean {
+  if (typeof window === "undefined") return false;
+  return localStorage.getItem("theme") === "light";
+}
+
 const ThemeToggle = () => {
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    if (stored === "light") {
-      document.documentElement.classList.add("light");
-      setIsLight(true);
-    }
+    const light = getInitialTheme();
+    if (light) document.documentElement.classList.add("light");
+    setIsLight(light);
+    setMounted(true);
   }, []);
 
   const toggle = () => {
-    if (isLight) {
-      document.documentElement.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-      setIsLight(false);
-    } else {
-      document.documentElement.classList.add("light");
-      localStorage.setItem("theme", "light");
-      setIsLight(true);
-    }
+    setIsLight((prev) => {
+      const next = !prev;
+      if (next) {
+        document.documentElement.classList.add("light");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.classList.remove("light");
+        localStorage.setItem("theme", "dark");
+      }
+      return next;
+    });
   };
+
+  if (!mounted) return <div className="w-9 h-9" />;
 
   return (
     <button

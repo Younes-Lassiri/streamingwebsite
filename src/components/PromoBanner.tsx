@@ -1,8 +1,8 @@
 ﻿"use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { X, Zap, Clock, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { X, Zap, Clock, ArrowRight, Flame } from "lucide-react";
+import { m, AnimatePresence } from "framer-motion";
 
 const PromoBanner = () => {
   const [visible, setVisible] = useState(true);
@@ -34,7 +34,7 @@ const PromoBanner = () => {
 
   return (
     <AnimatePresence>
-      <motion.div
+      <m.div
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -50, opacity: 0 }}
@@ -58,8 +58,9 @@ const PromoBanner = () => {
               <span className="bg-black/30 rounded px-1.5 py-0.5 text-white font-bold">{pad(timeLeft.s)}</span>
             </div>
 
-            <span className="text-white text-center text-xs sm:text-sm">
-              ðŸ”¥ <strong>FLASH SALE:</strong> 50% OFF 12-Month Plans
+            <span className="text-white text-center text-xs sm:text-sm inline-flex items-center gap-1.5">
+              <Flame size={16} className="text-orange-400 fill-orange-400" />
+              <strong>FLASH SALE:</strong> 50% OFF 12-Month Plans
             </span>
 
             <Link
@@ -78,10 +79,12 @@ const PromoBanner = () => {
             </button>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </AnimatePresence>
   );
 };
 
 export default PromoBanner;
+
+
 

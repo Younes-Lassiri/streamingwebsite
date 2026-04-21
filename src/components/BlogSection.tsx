@@ -1,6 +1,6 @@
 ﻿"use client";
-import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
+import { m } from "framer-motion";
+import { Calendar, Clock, ArrowRight, BookOpen, FileText } from "lucide-react";
 import Link from "next/link";
 import { BLOG_POSTS } from "@/data/blogPosts";
 
@@ -8,28 +8,31 @@ const BlogSection = () => (
   <section className="py-24 relative overflow-hidden" id="blog" aria-labelledby="blog-heading">
     <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background" />
     <div className="container relative z-10">
-      <motion.div
+      <m.div
         className="text-center mb-14"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
       >
-        <span className="section-badge mb-4 inline-flex">ðŸ“ IPTV Blog & Guides</span>
+        <span className="section-badge mb-4 inline-flex items-center gap-2">
+          <FileText size={16} className="text-primary" />
+          IPTV Blog & Guides
+        </span>
         <h2 id="blog-heading" className="font-heading text-3xl md:text-5xl font-bold mt-2">
           Latest <span className="gradient-text">IPTV News</span> & Tutorials
         </h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
           Expert guides, streaming tips, and the latest news on the best IPTV services, cord-cutting, sports streaming, and 4K entertainment.
         </p>
-      </motion.div>
+      </m.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {BLOG_POSTS.map((post, i) => (
-          <motion.article
+          <m.article
             key={post.slug}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ delay: i * 0.08 }}
             className="glass-card p-6 hover-lift group flex flex-col"
             itemScope
@@ -67,37 +70,43 @@ const BlogSection = () => (
                 </time>
               </div>
               <Link
-                href="/pricing"
-                className="flex items-center gap-1 text-primary text-sm font-semibold hover:gap-2 transition-all"
-                aria-label={`Read more about ${post.title}`}
-              >
-                Read More <ArrowRight size={14} />
-              </Link>
+  href={`/blog/${post.slug}`}
+  className="flex items-center gap-1 text-primary text-sm font-semibold hover:gap-2 transition-all"
+  aria-label={`Read more about ${post.title}`}
+>
+  Read more <ArrowRight size={14} />
+</Link>
             </div>
 
             <meta itemProp="author" content={post.author} />
             <meta itemProp="keywords" content={post.keywords.join(", ")} />
-          </motion.article>
+          </m.article>
         ))}
       </div>
 
-      <motion.div
+      <m.div
         className="text-center mt-12"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <Link
-          href="/pricing"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/30 text-primary font-semibold hover:bg-primary/20 transition-all"
-        >
-          <BookOpen size={16} />
-          Explore All IPTV Plans
-        </Link>
-      </motion.div>
+  href="/blog"
+  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/30 text-primary font-semibold hover:bg-primary/20 transition-all"
+>
+  <BookOpen size={16} />
+  Explore All IPTV Guides
+</Link>
+      </m.div>
     </div>
   </section>
 );
 
 export default BlogSection;
+
+
+
+
+
+
 

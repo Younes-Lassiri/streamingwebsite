@@ -1,5 +1,6 @@
 ﻿"use client";
-import { MessageCircle } from "lucide-react";
+
+import { FaWhatsapp } from "react-icons/fa";
 import { WHATSAPP_LINK } from "@/data/siteData";
 
 const WhatsAppButton = () => (
@@ -11,9 +12,8 @@ const WhatsAppButton = () => (
     className="fixed bottom-20 md:bottom-6 right-5 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
     style={{ background: "#25D366" }}
   >
-    <MessageCircle size={26} className="text-white" />
+    <FaWhatsapp size={30} className="text-white" />
   </a>
 );
 
 export default WhatsAppButton;
-

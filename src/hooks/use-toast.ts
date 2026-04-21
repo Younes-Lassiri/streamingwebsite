@@ -2,8 +2,6 @@
 import * as React from "react";
 
 const TOAST_LIMIT = 1;
-const TOAST_REMOVE_DELAY = 1000000;
-
 type ToasterToast = {
   id: string;
   title?: React.ReactNode;
@@ -12,13 +10,6 @@ type ToasterToast = {
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 };
-
-const actionTypes = {
-  ADD_TOAST: "ADD_TOAST",
-  UPDATE_TOAST: "UPDATE_TOAST",
-  DISMISS_TOAST: "DISMISS_TOAST",
-  REMOVE_TOAST: "REMOVE_TOAST",
-} as const;
 
 let count = 0;
 function genId() {
@@ -35,8 +26,6 @@ type Action =
 interface State {
   toasts: ToasterToast[];
 }
-
-const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>();
 
 function reducer(state: State, action: Action): State {
   switch (action.type) {
@@ -80,3 +69,4 @@ function useToast() {
 }
 
 export { useToast, toast };
+

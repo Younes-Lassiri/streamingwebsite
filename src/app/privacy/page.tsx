@@ -14,7 +14,7 @@ const Privacy = () => (
         <div className="prose prose-invert prose-sm max-w-none space-y-6 text-muted-foreground leading-relaxed">
           <section>
             <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">1. Introduction</h2>
-            <p>{SITE_NAME} ("we," "us," or "our") respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you use our website and streaming services.</p>
+            <p>{SITE_NAME} (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you use our website and streaming services.</p>
           </section>
 
           <section>
@@ -77,18 +77,13 @@ const Privacy = () => (
           </section>
 
           <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">9. Children's Privacy</h2>
+            <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">9. children&apos;s Privacy</h2>
             <p>Our Service is not directed to children under 13 years of age. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will take steps to remove it.</p>
           </section>
 
           <section>
             <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">10. Changes to This Policy</h2>
             <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page with an updated effective date.</p>
-          </section>
-
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mt-8 mb-3">11. Contact Us</h2>
-            <p>For questions or concerns about this Privacy Policy, contact us at <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">{SUPPORT_EMAIL}</a>.</p>
           </section>
         </div>
       </div>
@@ -98,4 +93,6 @@ const Privacy = () => (
 );
 
 export default Privacy;
+
+
 

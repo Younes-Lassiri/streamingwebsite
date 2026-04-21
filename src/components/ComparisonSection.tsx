@@ -1,31 +1,35 @@
 ﻿"use client";
-import { motion } from "framer-motion";
-import { Check, X, Award } from "lucide-react";
+import { m } from "framer-motion";
+import { Check, X, Award, Zap } from "lucide-react";
 import { COMPARISON_DATA, SITE_NAME } from "@/data/siteData";
 
 const ComparisonSection = () => (
   <section className="py-24 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 to-background" />
     <div className="container relative z-10">
-      <motion.div
+      <m.div
         className="text-center mb-14"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
       >
-        <span className="section-badge mb-4 inline-flex">âš¡ Stream More. Pay Less</span>
+        
+        <span className="section-badge mb-4 inline-flex items-center gap-2">
+          <Zap size={16} className="text-yellow-400 fill-yellow-400" />
+          Stream More. Pay Less
+        </span>
         <h2 className="font-heading text-3xl md:text-5xl font-bold mt-2">What Makes Our IPTV Stand Out</h2>
         <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">
           See how {SITE_NAME} compares to traditional cable and other providers.
         </p>
-      </motion.div>
+      </m.div>
 
       <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
         {/* Traditional Cable */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           className="glass-card p-7"
         >
           <h3 className="font-heading text-lg font-bold mb-6 text-muted-foreground">Traditional Cable</h3>
@@ -45,13 +49,13 @@ const ComparisonSection = () => (
               </li>
             ))}
           </ul>
-        </motion.div>
+        </m.div>
 
         {/* Our Service â€” Highlighted */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ delay: 0.1 }}
           className="glass-card-elevated p-7 relative"
         >
@@ -71,13 +75,13 @@ const ComparisonSection = () => (
               </li>
             ))}
           </ul>
-        </motion.div>
+        </m.div>
 
         {/* Other IPTV */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ delay: 0.2 }}
           className="glass-card p-7"
         >
@@ -98,11 +102,14 @@ const ComparisonSection = () => (
               </li>
             ))}
           </ul>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   </section>
 );
 
 export default ComparisonSection;
+
+
+
 

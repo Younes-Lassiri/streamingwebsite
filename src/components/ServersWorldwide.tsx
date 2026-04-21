@@ -1,5 +1,5 @@
 ﻿"use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Globe, Zap, Shield, Activity } from "lucide-react";
 
 const SERVERS = [
@@ -48,11 +48,11 @@ const ServersWorldwide = () => (
     </div>
 
     <div className="container relative z-10">
-      <motion.div
+      <m.div
         className="text-center mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <span className="section-badge mb-4 inline-flex">ðŸŒ Global Network Infrastructure</span>
         <h2 id="servers-heading" className="font-heading text-3xl md:text-5xl font-bold mt-2">
@@ -61,32 +61,32 @@ const ServersWorldwide = () => (
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
           Ultra-low latency IPTV servers strategically placed across 25 countries â€” delivering buffer-free 4K streaming wherever you are.
         </p>
-      </motion.div>
+      </m.div>
 
       {/* Live stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
         {STATS.map((s, i) => (
-          <motion.div
+          <m.div
             key={s.label}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ delay: i * 0.08 }}
             className="glass-card p-5 text-center"
           >
             <s.icon className="mx-auto mb-2 text-primary" size={24} />
             <div className="font-heading text-2xl font-bold gradient-text">{s.value}</div>
             <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
 
       {/* Live status header */}
-      <motion.div
+      <m.div
         className="max-w-6xl mx-auto mb-6 flex items-center justify-between glass-card px-5 py-3"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <div className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
@@ -96,16 +96,16 @@ const ServersWorldwide = () => (
           <span className="text-sm font-semibold text-foreground">Live Server Status</span>
         </div>
         <span className="text-xs text-muted-foreground">All systems operational â€¢ Updated in real-time</span>
-      </motion.div>
+      </m.div>
 
       {/* Server grid â€” interactive cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 max-w-6xl mx-auto">
         {SERVERS.map((s, i) => (
-          <motion.div
+          <m.div
             key={s.country}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ delay: i * 0.02 }}
             whileHover={{ scale: 1.03, y: -2 }}
             className="glass-card p-4 group cursor-pointer"
@@ -134,32 +134,35 @@ const ServersWorldwide = () => (
 
             {/* Load bar */}
             <div className="mt-2 h-1 rounded-full bg-secondary/50 overflow-hidden">
-              <motion.div
+              <m.div
                 initial={{ width: 0 }}
                 whileInView={{ width: `${s.load}%` }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 1, delay: i * 0.02 }}
                 className={`h-full rounded-full ${
                   s.load < 50 ? "bg-success" : s.load < 70 ? "bg-accent" : "bg-primary"
                 }`}
               />
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
 
-      <motion.p
+      <m.p
         className="text-center text-sm text-muted-foreground mt-10 max-w-2xl mx-auto"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         Connect automatically to the closest server for lightning-fast IPTV streaming. Our intelligent routing ensures
         99.9% uptime and the lowest possible latency in your region.
-      </motion.p>
+      </m.p>
     </div>
   </section>
 );
 
 export default ServersWorldwide;
+
+
+
 

@@ -3,7 +3,7 @@ import { useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Search, Globe, Tv, Film, Trophy, Radio, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 
@@ -179,8 +179,6 @@ const ChannelList = () => {
     return result;
   }, [search]);
 
-  const totalChannels = Object.values(CHANNEL_DATA).reduce((sum, d) => sum + d.channels.length, 0);
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -188,7 +186,7 @@ const ChannelList = () => {
       {/* Hero */}
       <section className="pt-32 pb-16">
         <div className="container">
-          <motion.div
+          <m.div
             className="text-center max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -233,7 +231,7 @@ const ChannelList = () => {
                 </span>
               )}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -244,7 +242,7 @@ const ChannelList = () => {
             {Object.entries(filteredData).map(([country, data], idx) => {
               const isExpanded = expandedCountry === country || !!search.trim();
               return (
-                <motion.div
+                <m.div
                   key={country}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -277,13 +275,13 @@ const ChannelList = () => {
                       </div>
                     </div>
                   )}
-                </motion.div>
+                </m.div>
               );
             })}
           </div>
 
           {/* Bottom CTA */}
-          <motion.div
+          <m.div
             className="text-center mt-14"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -295,7 +293,7 @@ const ChannelList = () => {
             <Link href="/pricing" className="btn-primary inline-flex items-center gap-2">
               Get Access to All Channels
             </Link>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -306,4 +304,7 @@ const ChannelList = () => {
 };
 
 export default ChannelList;
+
+
+
 

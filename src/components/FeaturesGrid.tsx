@@ -1,16 +1,16 @@
 ﻿"use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Tv, Film, Radio, Trophy, Settings, Headphones } from "lucide-react";
 import { FEATURES } from "@/data/siteData";
 
 const featureImages: Record<string, string> = {
-  Tv: "/assets/feature-premium.jpg",
-  Film: "/assets/feature-movies.jpg",
-  Radio: "/assets/feature-channels.jpg",
-  Trophy: "/assets/feature-sports.jpg",
-  Settings: "/assets/feature-setup.jpg",
-  Headphones: "/assets/feature-support.jpg",
+  Tv: "/assets/feature-premium.webp",
+  Film: "/assets/feature-movies.webp",
+  Radio: "/assets/feature-channels.webp",
+  Trophy: "/assets/feature-sports.webp",
+  Settings: "/assets/feature-setup.webp",
+  Headphones: "/assets/feature-support.webp",
 };
 
 const iconComponents: Record<string, React.ReactNode> = {
@@ -25,26 +25,26 @@ const iconComponents: Record<string, React.ReactNode> = {
 const FeaturesGrid = () => (
   <section className="py-24">
     <div className="container">
-      <motion.div
+      <m.div
         className="text-center mb-14"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <span className="section-badge mb-4 inline-flex">⚡ Features</span>
         <h2 className="font-heading text-3xl md:text-5xl font-bold mt-2">Discover the Best IPTV Experience</h2>
         <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-lg">
           Everything you need for the ultimate streaming experience, all in one service.
         </p>
-      </motion.div>
+      </m.div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {FEATURES.map((f, i) => (
-          <motion.div
+          <m.div
             key={f.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ delay: i * 0.08 }}
             className="glass-card overflow-hidden hover-lift group"
           >
@@ -69,7 +69,7 @@ const FeaturesGrid = () => (
                 View Plans →
               </Link>
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </div>
@@ -77,3 +77,6 @@ const FeaturesGrid = () => (
 );
 
 export default FeaturesGrid;
+
+
+
