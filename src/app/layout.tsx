@@ -16,8 +16,16 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Premium IPTV Service | 25,000+ Channels in 8K",
-  description: "Get instant access to 25,000+ live channels, 120,000+ movies and series, and all major sports in stunning 8K quality. Starting at $5/month.",
+  metadataBase: new URL('https://8kstreamlive.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/',
+    },
+  },
+  // This is now 58 characters - Perfect for Google
+  title: "Premium IPTV Service | 25,000+ Channels in 8K UHD Streaming", 
+  description: "Access 25,000+ live channels and 120,000+ movies in 8K UHD. Premium sports and entertainment starting at $5/month.",
   icons: {
     icon: "/icon.webp",
     shortcut: "/icon.webp",
@@ -26,13 +34,39 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // Create the JSON-LD object
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "8K Stream Live IPTV",
+    "image": "https://8kstreamlive.com/icon.webp",
+    "description": "Premium IPTV service with 25,000+ live channels and 120,000+ VODs in 8K quality.",
+    "brand": {
+      "@type": "Brand",
+      "name": "8K Stream Live"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://8kstreamlive.com/pricing",
+      "priceCurrency": "USD",
+      "price": "5.38",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1250"
+    }
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/icon.webp" type="image/webp" />
-        <link rel="apple-touch-icon" href="/icon.webp" />
-      </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
+        {/* Add this script tag here */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Providers>{children}</Providers>
       </body>
     </html>

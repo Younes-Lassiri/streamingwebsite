@@ -13,6 +13,12 @@ export const NAV_LINKS = [
   { label: "Channel List", href: "/channel-list" },
   { label: "Installation Guide", href: "/installation" },
 ];
+export const SOCIAL_LINKS = {
+  youtube:   "https://youtube.com/@8kstreamlive",    // REPLACE
+  facebook:  "https://facebook.com/8kstreamlive",    // REPLACE
+  instagram: "https://instagram.com/8kstreamlive",   // REPLACE
+  x:         "https://x.com/8kstreamlive",           // REPLACE
+};
 
 export const HERO_STATS = [
   { value: "25,000+", label: "Live Channels" },
@@ -161,33 +167,33 @@ export const COMPARISON_DATA = {
 
 export const FEATURES = [
   {
-    title: "Premium IPTV Service",
-    description: "Experience crystal-clear streaming quality from SD to 4K Ultra HD. Zero buffering performance on all devices for an unmatched viewing experience.",
+    title: "Premium 8K IPTV Service",
+    description: "Experience the future of television with crystal-clear streaming quality ranging from SD and HD to 4K and native 8K Ultra HD. Our service utilizes advanced H.265 compression to deliver high-bitrate video with minimal bandwidth, ensuring a cinematic viewing experience on every screen in your home.",
     icon: "Tv",
   },
   {
-    title: "Unlimited Movies & Series",
-    description: "Access over 120,000 movies and TV series instantly. From latest releases to classic films and popular series â€” all available on-demand.",
+    title: "Vast VOD Library: 120,000+ Titles",
+    description: "Your subscription replaces every other streaming app. Access a massive on-demand library featuring over 120,000 movies and TV series. We update our database daily with the latest 2026 cinema releases, trending Netflix originals, and complete HBO box sets, all available in stunning high definition with multi-language subtitles.",
     icon: "Film",
   },
   {
-    title: "Live IPTV Channels",
-    description: "Stream over 25,000 live channels from the US and worldwide. Sports, news, entertainment with full EPG and catch-up TV functionality.",
+    title: "Global Live IPTV Channels",
+    description: "Broaden your horizons with over 25,000 live channels from the US, UK, Canada, and 80+ other countries. Our intuitive Electronic Program Guide (EPG) ensures you never miss a show, while our 7-day catch-up TV functionality allows you to rewind and watch previous broadcasts at your own convenience.",
     icon: "Radio",
   },
   {
-    title: "Live Sports IPTV",
-    description: "Never miss a game with comprehensive sports coverage. Live football, basketball, baseball, hockey and more from major leagues.",
+    title: "The Ultimate Live Sports Hub",
+    description: "Designed for the hardcore sports fan, 8kstreamlive offers comprehensive coverage of the NFL, NBA, MLB, NHL, and every major soccer league. Watch UFC Pay-Per-View events, F1 racing, and the 2026 World Cup in 8K resolution with ultra-low latency, meaning you see the action before the spoilers hit social media.",
     icon: "Trophy",
   },
   {
-    title: "Easy IPTV Setup",
-    description: "Simple IPTV setup on all devices â€” Fire Stick, Android boxes, Smart TVs, tablets, and phones. Step-by-step guides and instant activation.",
+    title: "Plug-and-Play Easy Setup",
+    description: "No technical degree required. Our service offers a seamless IPTV setup across all modern devices including Amazon Fire TV Stick, Android boxes, Smart TVs (Samsung/LG), tablets, and iPhones. We provide detailed, illustrated step-by-step guides and guarantee instant activation so you can start watching within minutes.",
     icon: "Settings",
   },
   {
-    title: "24/7 American Support",
-    description: "Round-the-clock support from our American customer service team. Technical assistance, billing support, and troubleshooting anytime you need help.",
+    title: "24/7 Dedicated Support & Security",
+    description: "Rest easy with our 'Ra7a' commitment. We provide 24/7 American-led customer support to handle technical assistance, billing, and setup troubleshooting. Our infrastructure features built-in Anti-Freeze 4.0 technology and VPN-friendly servers to ensure your connection remains private, secure, and buffer-free.",
     icon: "Headphones",
   },
 ];
@@ -261,6 +267,7 @@ export const FAQS = [
     q: "Can I cancel my subscription anytime?",
     a: "Yes, you can cancel your subscription at any time with no cancellation fees or penalties. There are no long-term contracts. Your access continues until the end of your current billing period.",
   },
+
   {
     q: "Do you provide customer support?",
     a: "Yes! 8kstreamlive offers 24/7 customer support via email and WhatsApp. Our dedicated support team helps with setup, troubleshooting, billing questions, and any other issues. Most inquiries are resolved within minutes.",
@@ -269,10 +276,31 @@ export const FAQS = [
     q: "What countries are covered in your channel list?",
     a: "8kstreamlive covers 80+ countries including the USA, UK, Canada, Germany, France, Spain, Italy, Brazil, Middle East, India, and many more. Visit our Channel List page for a complete breakdown of available channels by country.",
   },
+
   {
     q: "Does 8kstreamlive include PPV (Pay-Per-View) events?",
     a: "Yes! All 8kstreamlive plans include access to premium PPV events including UFC fights, boxing matches, WWE events, and special sporting events â€” at no additional cost. Watch every major PPV event live in HD or 4K.",
   },
+  {
+    q: "What is IPTV and how exactly does it work in 2026?",
+    a: "IPTV (Internet Protocol Television) is the modern alternative to traditional cable and satellite. Instead of receiving signals through a dish or a copper wire, 8kstreamlive delivers high-quality video data packets over your existing internet connection. This allows for much higher resolutions like 8K and 4K UHD. Once you subscribe, you simply use an IPTV player app to 'tune into' our global server network, giving you instant access to global media without the need for expensive hardware or long-term contracts.",
+  },
+  {
+    q: "Is 8kstreamlive reliable during high-traffic events?",
+    a: "Absolutely. Most 'budget' providers crash during the Super Bowl or World Cup because their servers get overloaded. 8kstreamlive uses a sophisticated Load-Balancing system across 25+ global edge servers. When one server reaches 70% capacity, our system automatically routes new users to a fresh server. This, combined with our Anti-Freeze 4.0 technology, ensures that your stream remains stable, even when millions of people are watching the same match simultaneously.",
+  },
+  {
+    q: "Do I need a VPN to use your IPTV service?",
+    a: "While 8kstreamlive does not require a VPN to function, we are a VPN-friendly provider. Some Internet Service Providers (ISPs) may intentionally 'throttle' or slow down your connection when they detect high-bandwidth streaming. Using a VPN can bypass this throttling and provide a smoother experience. Our servers are optimized to work perfectly with popular VPNs like NordVPN, ExpressVPN, and Surfshark, ensuring your privacy and speed are always protected.",
+  },
+  {
+    q: "How does the 8K upscaling technology work?",
+    a: "We pride ourselves on being industry leaders in visual quality. For channels that are broadcast in 1080p or 4K, our servers utilize real-time AI upscaling to enhance the detail and color depth before it reaches your screen. This results in a sharper image that takes full advantage of your 8K Smart TV's capabilities. Combined with our high-bitrate feeds, you will notice a significant difference in clarity compared to standard cable or other low-quality IPTV providers.",
+  },
+  {
+    q: "What should I do if my service is interrupted or 'shut down'?",
+    a: "Your 'Ra7a' (peace of mind) is our top priority. In the highly unlikely event that a specific server link is blocked or experiences downtime, do not worry. Our technical team monitors the network 24/7. Simply contact us via WhatsApp or Email, and we will immediately provide you with an alternative 'backup' line or new credentials. We maintain multiple standby servers to ensure that you stay connected to your entertainment while we resolve any backend issues. We won't leave you without service!",
+  }
 ];
 
 export const WHY_CHOOSE = [

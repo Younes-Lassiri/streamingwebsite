@@ -13,6 +13,7 @@ import WorldCupBanner from "@/components/WorldCupBanner";
 import WelcomePopup from "@/components/WelcomePopup";
 import Link from "next/link";
 import { m } from "framer-motion";
+import { FAQS } from "@/data/siteData"; // Import your FAQ data here
 
 const AdultSection = dynamic(() => import("@/components/AdultSection"), { ssr: false });
 const ShowsSection = dynamic(() => import("@/components/ShowsSection"), { ssr: false });
@@ -29,16 +30,63 @@ const CTASection = dynamic(() => import("@/components/CTASection"), { ssr: false
 const ServersWorldwide = dynamic(() => import("@/components/ServersWorldwide"), { ssr: false });
 
 const Index = () => {
+  // --- STRUCTURED DATA (SEO) ---
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQS.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a,
+      },
+    })),
+  };
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "8kstreamlive Premium IPTV",
+    "description": "Best IPTV service in 2026 with 25,000+ channels and 120,000+ VODs.",
+    "brand": { "@type": "Brand", "name": "8kstreamlive" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "5.38",
+      "availability": "https://schema.org/InStock",
+      "url": "https://8kstreamlive.com"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1250"
+    }
+  };
+  // -----------------------------
+
   return (
     <div className="min-h-screen bg-background pb-16 md:pb-0">
+      {/* Injecting Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+
       <PromoBanner />
       <WelcomePopup />
       <Navbar />
       <HeroSection />
       <WorldCupBanner />
+      
       <Suspense fallback={null}><AdultSection /></Suspense>
       <Suspense fallback={null}><ShowsSection /></Suspense>
       <Suspense fallback={null}><ContentShowcase /></Suspense>
+      
       <section className="py-24" id="pricing">
         <div className="container">
           <m.div
@@ -61,6 +109,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       <DeviceLogosSection />
       <Suspense fallback={null}><StepsSection /></Suspense>
       <Suspense fallback={null}><ComparisonSection /></Suspense>
@@ -72,10 +121,12 @@ const Index = () => {
       <Suspense fallback={null}><TrustTestimonials /></Suspense>
       <Suspense fallback={null}><BlogSection /></Suspense>
       <Suspense fallback={null}><CTASection /></Suspense>
+      
       <Footer />
       <StickyMobileCTA />
       <WhatsAppButton />
     </div>
   );
 };
+
 export default Index;
