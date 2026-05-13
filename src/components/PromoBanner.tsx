@@ -1,13 +1,41 @@
 ﻿"use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import Link from "next/link";
 import { X, Zap, Clock, ArrowRight, Flame } from "lucide-react";
 import { m, AnimatePresence } from "framer-motion";
 
 const PromoBanner = () => {
   const [visible, setVisible] = useState(true);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
-  // Countdown timer â€” ends in 24h from first visit
+  // Keep Navbar (top: var(--banner-height)) aligned below this fixed banner
+  useLayoutEffect(() => {
+    if (!visible) {
+      document.documentElement.style.removeProperty("--banner-height");
+      return;
+    }
+    const el = bannerRef.current;
+    if (!el) return;
+
+    const sync = () => {
+      document.documentElement.style.setProperty(
+        "--banner-height",
+        `${Math.round(el.getBoundingClientRect().height)}px`
+      );
+    };
+
+    sync();
+    const ro = new ResizeObserver(sync);
+    ro.observe(el);
+    window.addEventListener("resize", sync);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", sync);
+      document.documentElement.style.removeProperty("--banner-height");
+    };
+  }, [visible]);
+
+  // Countdown timer — ends in 24h from first visit
   const [timeLeft, setTimeLeft] = useState({ h: 23, m: 59, s: 59 });
 
   useEffect(() => {
@@ -35,6 +63,7 @@ const PromoBanner = () => {
   return (
     <AnimatePresence>
       <m.div
+        ref={bannerRef}
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -50, opacity: 0 }}

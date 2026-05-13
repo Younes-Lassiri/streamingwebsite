@@ -255,6 +255,16 @@ h1, h2, h3, h4, h5, h6 {
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
 
+/* Fixed Navbar (+ optional promo banner) — sized for readable logo (h-12–h-16) */
+.pt-page {
+  padding-top: calc(var(--banner-height, 0px) + 5rem);
+}
+@media (min-width: 768px) {
+  .pt-page {
+    padding-top: calc(var(--banner-height, 0px) + 5.5rem);
+  }
+}
+
 
 
 

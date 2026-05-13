@@ -12,7 +12,7 @@ const Installation = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="pt-32 pb-16">
+      <section className="pt-page pb-16">
         <div className="container">
           <m.div
             className="text-center max-w-3xl mx-auto"

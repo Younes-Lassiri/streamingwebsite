@@ -120,6 +120,92 @@ export const PRICING_PLANS = [
   },
 ];
 
+/** Simultaneous connections — price per plan duration (USD total for the term) */
+export type DeviceCount = 1 | 2 | 3 | 4;
+
+export const PRICING_DEVICE_TIERS = [1, 2, 3, 4] as const satisfies readonly DeviceCount[];
+
+export const PLAN_DEVICE_PRICES: Record<string, Record<DeviceCount, number>> = {
+  "1month": { 1: 12.99, 2: 15.99, 3: 24.99, 4: 29.99 },
+  "3months": { 1: 34.99, 2: 44.99, 3: 64.99, 4: 79.99 },
+  "6months": { 1: 65.99, 2: 79.99, 3: 119.99, 4: 139.99 },
+  "12months": { 1: 119.99, 2: 129.99, 3: 199.99, 4: 239.99 },
+};
+
+const CHECKOUT_FORM_BASE = "https://nflsubs.kneo.me/form";
+
+/** Checkout URL per plan id × simultaneous devices (Kneo forms) */
+export const PLAN_CHECKOUT_URLS: Record<string, Record<DeviceCount, string>> = {
+  "1month": {
+    1: `${CHECKOUT_FORM_BASE}/13505437e2e9cc82.html`,
+    2: `${CHECKOUT_FORM_BASE}/180477d976fc40d1.html`,
+    3: `${CHECKOUT_FORM_BASE}/13504586ff345c4c.html`,
+    4: `${CHECKOUT_FORM_BASE}/180500ee0ca842d9.html`,
+  },
+  "3months": {
+    1: `${CHECKOUT_FORM_BASE}/1350383db48d588c.html`,
+    2: `${CHECKOUT_FORM_BASE}/18047899045356c2.html`,
+    3: `${CHECKOUT_FORM_BASE}/1804813437704b6c.html`,
+    4: `${CHECKOUT_FORM_BASE}/180501dbcfb98046.html`,
+  },
+  "6months": {
+    1: `${CHECKOUT_FORM_BASE}/179956b399346513.html`,
+    2: `${CHECKOUT_FORM_BASE}/180479108ef84d6c.html`,
+    3: `${CHECKOUT_FORM_BASE}/180482979c24a06e.html`,
+    4: `${CHECKOUT_FORM_BASE}/180483929681a6ab.html`,
+  },
+  "12months": {
+    1: `${CHECKOUT_FORM_BASE}/1350514b937a81fe.html`,
+    2: `${CHECKOUT_FORM_BASE}/180480981ef4cf2c.html`,
+    3: `${CHECKOUT_FORM_BASE}/180499514d489d67.html`,
+    4: `${CHECKOUT_FORM_BASE}/1804844a20cfe668.html`,
+  },
+};
+
+export function getPlanCheckoutUrl(planId: string, devices: DeviceCount): string {
+  const row = PLAN_CHECKOUT_URLS[planId];
+  const url = row?.[devices];
+  if (url) return url;
+  return "/pricing";
+}
+
+export const PLAN_BILLING_MONTHS: Record<string, number> = {
+  "1month": 1,
+  "3months": 3,
+  "6months": 6,
+  "12months": 12,
+  "24months": 24,
+};
+
+/** Strike-through “list” price: current + 15–55% (by plan & device count), stable for display */
+export function getDisplayListPrice(
+  current: number,
+  planId: string,
+  devices: DeviceCount
+): number {
+  const baseMarkup: Record<string, number> = {
+    "1month": 0.48,
+    "3months": 0.42,
+    "6months": 0.36,
+    "12months": 0.24,
+    "24months": 0.3,
+  };
+  let pct = baseMarkup[planId] ?? 0.32;
+  pct += (devices - 1) * 0.035;
+  pct = Math.min(0.55, Math.max(0.15, pct));
+  return Math.round(current * (1 + pct) * 100) / 100;
+}
+
+export function getDevicePlanPrice(planId: string, devices: DeviceCount): number | null {
+  const row = PLAN_DEVICE_PRICES[planId];
+  if (!row) return null;
+  return row[devices] ?? null;
+}
+
+export function planSupportsDeviceTiers(planId: string): boolean {
+  return planId in PLAN_DEVICE_PRICES;
+}
+
 export const DEVICES = [
   "Amazon Fire TV",
   "Android",

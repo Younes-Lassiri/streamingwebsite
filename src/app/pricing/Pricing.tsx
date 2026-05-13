@@ -1,6 +1,7 @@
 ﻿"use client";
 import Navbar from "@/components/Navbar";
 import PricingCards from "@/components/PricingCards";
+import PricingClarityBanner from "@/components/PricingClarityBanner";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -13,14 +14,16 @@ const Pricing = () => {
     <div className="min-h-screen bg-background pb-16 md:pb-0">
       <Navbar />
 
-      <section className="pt-32 pb-24">
+      <section className="pt-page pb-24">
         <div className="container">
+          <PricingClarityBanner />
+
           <m.div
             className="text-center mb-14"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <span className="section-badge mb-4 inline-flex">ðŸ’° Plans & Pricing</span>
+            <span className="section-badge mb-4 inline-flex">Plans & Pricing</span>
             <h1 className="font-heading text-4xl md:text-6xl font-bold mt-2">
               Simple, Transparent Pricing
             </h1>
@@ -42,7 +45,7 @@ const Pricing = () => {
             ))}
           </div>
 
-          <PricingCards showAll />
+          <PricingCards showDeviceFilter />
         </div>
       </section>
 

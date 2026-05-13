@@ -6,7 +6,7 @@ import { SITE_NAME, SUPPORT_EMAIL } from "@/data/siteData";
 const Terms = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
-    <article className="pt-32 pb-24">
+    <article className="pt-page pb-24">
       <div className="container max-w-3xl">
         <h1 className="font-heading text-4xl md:text-5xl font-bold mb-8">Terms & Conditions</h1>
         <p className="text-muted-foreground mb-6">Last updated: April 8, 2026</p>

@@ -21,7 +21,10 @@ const HeroSection = () => {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <section ref={ref} className="relative min-h-[100vh] flex items-center overflow-hidden">
+    <section
+      ref={ref}
+      className="relative flex min-h-[100vh] items-center overflow-hidden pt-page"
+    >
       <m.div className="absolute inset-0" style={{ y: bgY }}>
         <Image
           src="/assets/hero-bg.webp"

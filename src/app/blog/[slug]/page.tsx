@@ -51,7 +51,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   };
 
   return (
-    <article className="pt-32 pb-20">
+    <article className="pt-page pb-20">
       {/* Injecting the Blog Schema */}
       <script
         type="application/ld+json"

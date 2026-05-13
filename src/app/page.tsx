@@ -27,7 +27,6 @@ const SportsSection = dynamic(() => import("@/components/SportsSection"), { ssr:
 const TrustTestimonials = dynamic(() => import("@/components/TrustTestimonials"), { ssr: false });
 const BlogSection = dynamic(() => import("@/components/BlogSection"), { ssr: false });
 const CTASection = dynamic(() => import("@/components/CTASection"), { ssr: false });
-const ServersWorldwide = dynamic(() => import("@/components/ServersWorldwide"), { ssr: false });
 
 const Index = () => {
   // --- STRUCTURED DATA (SEO) ---
@@ -101,7 +100,7 @@ const Index = () => {
               Flexible IPTV plans for every viewer. All plans include full access to 25,000+ channels and 120,000+ movies on multiple devices.
             </p>
           </m.div>
-          <PricingCards />
+          <PricingCards showDeviceFilter />
           <div className="text-center mt-6">
             <Link href="/pricing" className="text-primary font-semibold hover:underline text-sm">
               View All Plans & Compare →
@@ -117,7 +116,6 @@ const Index = () => {
       <Suspense fallback={null}><FAQAccordion limit={8} /></Suspense>
       <Suspense fallback={null}><WhyChooseSection /></Suspense>
       <Suspense fallback={null}><SportsSection /></Suspense>
-      <Suspense fallback={null}><ServersWorldwide /></Suspense>
       <Suspense fallback={null}><TrustTestimonials /></Suspense>
       <Suspense fallback={null}><BlogSection /></Suspense>
       <Suspense fallback={null}><CTASection /></Suspense>
