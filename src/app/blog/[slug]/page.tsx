@@ -1,9 +1,19 @@
 ﻿import { BLOG_POSTS } from "@/data/blogPosts";
+import { getBlogImage } from "@/lib/blogContent";
 import { notFound } from "next/navigation";
+import BlogPostView from "./BlogPostView";
 
-// This part handles the Meta Title/Description for the specific blog post
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+export function generateStaticParams() {
+  return BLOG_POSTS.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return {};
 
   return {
@@ -15,63 +25,51 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
   }
 
-  // --- BLOG STRUCTURED DATA ---
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.excerpt,
-    "image": "https://8kstreamlive.com/icon.webp", // Replace with actual post image if available
-    "author": {
-      "@type": "Organization",
-      "name": "8kstreamlive Editorial",
-      "url": "https://8kstreamlive.com"
+    headline: post.title,
+    description: post.excerpt,
+    image: `https://8kstreamlive.com${getBlogImage(post)}`,
+    author: {
+      "@type": "Person",
+      name: post.author,
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "8kstreamlive",
-      "logo": {
+      name: "8kstreamlive",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://8kstreamlive.com/icon.webp"
-      }
+        url: "https://8kstreamlive.com/icon.webp",
+      },
     },
-    "datePublished": post.date,
-    "dateModified": post.date,
-    "mainEntityOfPage": {
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://8kstreamlive.com/blog/${post.slug}`
-    }
+      "@id": `https://8kstreamlive.com/blog/${post.slug}`,
+    },
   };
 
   return (
-    <article className="pt-page pb-20">
-      {/* Injecting the Blog Schema */}
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
-
-      <div className="container max-w-4xl">
-        <span className="text-primary font-semibold">{post.category}</span>
-        <h1 className="text-4xl md:text-6xl font-bold mt-4 mb-8 font-heading">
-          {post.title}
-        </h1>
-        
-        <div className="prose prose-invert max-w-none">
-          {post.content.map((paragraph, index) => (
-            <p key={index} className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </div>
-    </article>
+      <BlogPostView post={post} />
+    </>
   );
 }

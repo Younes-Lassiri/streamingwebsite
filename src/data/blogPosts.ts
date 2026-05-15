@@ -10,6 +10,7 @@ export interface BlogPost {
   date: string;
   author: string;
   keywords: string[];
+  image?: string;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
